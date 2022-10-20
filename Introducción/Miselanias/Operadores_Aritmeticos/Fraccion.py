@@ -1,0 +1,8 @@
+num1= int (input("ingresar el primer numerador de la primera fraccion"))
+den1= int (input("ingresar denomidador de la primera fraccion"))
+num2= int (input("ingresa numerador de la segunda fraccion"))
+den2= int (input("ingresar denominador de la segunda fraccion"))
+print("la multiplicacion de las fracciones es:",num1*num2, den1*den2, sep="/")
+print ("la division de las fraccionrd es:", num1*den2, den1*num2, sep="/")
+print ("la suma de la fracciones es:", (num1*den2)+(den1*num2), den1*den2, sep="/")
+print ("la resta de la fracciones es:", (num1*den2)-(den1*num2), den1*den2, sep="/")
