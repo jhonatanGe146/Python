@@ -9,7 +9,7 @@ usuario un valor no negativo n y visualice la siguiente salida:
 num= int (input ("Digite un numero entero positivo: "))
 nu=num+1
 if num > 0:
-    while nu >0:
+    while nu > 0:
         for i in range(1, nu):
             print (i , end=" ")
         nu-=1
