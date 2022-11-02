@@ -5,11 +5,11 @@ Es decir cuantos números de la serie de los naturales debo
 sumar para superar el dato máximo."""
 
 maximo=int (input("Digite el valor del dato maximo: "))
-x = 0
+x = maximo+1
 sum = 0
+cont=0
 while (sum < maximo):
-    x+=1
-    sum=0
-    for i in range(0,x+1):
+    for i in range(0,x):
         sum+=1
-print (x, "Es el miníno número natural solicitado para sobre pasar el dato máximo")
+        cont+=1
+print ( "Para superar el número maximo(",maximo,") hay que sumar 1,",cont,"veces")
