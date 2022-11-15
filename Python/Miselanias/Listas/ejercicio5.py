@@ -18,5 +18,4 @@ if num in lista[:]:
 else:        
     print("El valor", num, "no esta en la lista. se agregara de inmediato")
     lista.append(num)
-print(lista)
-print(len(lista))
+    print(lista)
