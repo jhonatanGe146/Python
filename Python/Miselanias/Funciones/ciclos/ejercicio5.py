@@ -18,4 +18,4 @@ def numero(num):
         return ("El número no está dentro de los párametros")
     
 num= int (input ("Digite un numero entero positivo: "))
-print(numero(num))
+(numero(num))
