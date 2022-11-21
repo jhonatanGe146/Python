@@ -14,8 +14,9 @@ el que tiene mas  canciones
 el que tiene  las cancion mas larga 
 el que tiene la cancion mas corta """
 
+
 listareproduccion={"maluma" :(
-                            "cancion " "perdedor ", 
+                            "perdedor ", 
                             "duracion " "3:27", 
                             "genero " "reggaeton"
                             ),
@@ -45,65 +46,70 @@ listareproduccion={"maluma" :(
                                 "genero ""pop"
                     )
                     
-                    }               
+                    }
+              
 
 # funcion buscar
-def artista (artis, playlist):
+def artista (playlist):
+    artis=input("Nombre del cantante que quieres buscar: ")
     if artis in playlist:
         print(playlist[artis])
-        return 1
+        
     else:
         print("El artista no se encuenta")
-        return 2
 
 #funcion agregar artitas
-def agregarArtista(veri, playlist):
-    if veri ==2:
+def agregarArtista(playlist):
         y=input("Escribe el nombre del artista que quieres agregar\n")
         playlist[y]=()
         print(playlist)
         return 1
+    
 #Agregar cancion
-def agregarCancion (artis,playlist):
-    if x ==1:
-        c=input("Nombre de la cancion que quieres agregar:\n")
-        g=input("genero de la cancion:\n")
-        d=input("duracion de la cancion:\n")
-        dici=("cancion", c,"duracion", d,"genero", g)
-        playlist[artis]+=dici
-        print(playlist)
-    else:
-        print("Debes agregar el artista primero")
+def agregarCancion (playlist):
+    artiscan=input("Nombre del artista al que le quieres agregar una cancion:\n")
+    c=input("Nombre de la cancion que quieres agregar:\n")
+    g=input("genero de la cancion:\n")
+    d=input("duracion de la cancion:\n")
+    dici=("cancion", c,"duracion", d,"genero", g)
+    playlist[artiscan]+=dici
+    print(playlist)
+#Eliminar artista
+def eliminarArtista(playlist):
+    eliminar=input("Nombre del artista que quieres eliminar\n")
+    del playlist[eliminar]
+    print(playlist)
+#organizar playlist
+def ordenarLista(playlist):
+    sorted((playlist.keys()))
+    print(playlist)
 
-cantante=input ("Escribe el nombre del artita que quieres buscar:\n")
+while True:
+    print("1-Buscar artista")
+    print("2-Agregar artista")
+    print("3-Agregar cancion")
+    print("4-Agregar eliminar artista")
+    print("5-organizar playlist")
+    print("6-Salir")
+    ctrl=int(input("Selecciona la opcion: "))
+    match ctrl:
+        case 1:
+            print("selecciono la opcion 1")
+            x= artista(listareproduccion)
 
-x= artista(cantante,listareproduccion)
-
-
-#funciones
-agregarArtista(x, listareproduccion)
-x= artista(cantante,listareproduccion)
-artiscan=input("Nombre del artista al que le quieres agregar una cancion:\n")
-agregarCancion(artiscan, listareproduccion)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-
-x=str(input("ingrese el artista:"))
-artista(x,listareproduccion)
-
-"""
+            print()
+        case 2:
+            print("selecciono la opcion 2")
+            agregarArtista(listareproduccion)
+            
+        case 3:
+            print("selecciono la opcion 3")
+            agregarCancion(listareproduccion)
+        case 4:
+            print("selecciono la opcion 4")
+            eliminarArtista(listareproduccion)
+        case 5:
+            ordenarLista(listareproduccion)
+        case 6:
+                print("saliste")
+                break
