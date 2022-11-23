@@ -1,0 +1,6 @@
+a=float (input ("ingresar a: "))
+b=float (input ("ingresar  b: "))
+c=float (input ("ingresar c: "))
+x= ((-(b)+((b ** 2 - 4*a*c) ** 0.5) )/ (2 * a))
+x2= ((-(b)-((b ** 2 - 4*a*c) ** 0.5) )/ (2 * a))
+print (" El resultado de la función cuadratica positiva es: ", x, "\n El resultado de la función negativa es: ", x2)
