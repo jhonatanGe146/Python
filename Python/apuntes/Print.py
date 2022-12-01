@@ -15,3 +15,8 @@ print(my_input * 3) # Salida esperada: holaholahola"""
 
 # x = int (input("Ingresa un número: ")) # El usuario ingresa un 2 
 # print(type(x))
+
+"""5- Realizar un codigo donde la variable (a) le sea asignada un numero entero y determina
+si esta entre el rango de 10 y 20 o si es mayor """
+
+
