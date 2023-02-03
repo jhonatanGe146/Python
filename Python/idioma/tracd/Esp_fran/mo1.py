@@ -76,7 +76,7 @@ def traducir ():
                     print(fran_esp(d))
                     print()
                 case 3:
-                    print("Saliste")
+                    return("Saliste")
                     break
                 case _:
                     print("Esta opcion no existe")
