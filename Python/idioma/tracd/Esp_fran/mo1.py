@@ -38,24 +38,27 @@ d={
 
 
 def esp_fran (dic):
+    global n,x
     n=str(input("Animal a traducir: "))
     if n in dic:
         for i in dic.keys():
             if n == i:
-                return n, "es", dic[i]
+                x=dic[i]
+                return n, "es", x
     else:
         return "El animal no esta en el diccionario"
         
         
 def fran_esp (dic):
+    global nom, y
     clave=list(dic.keys())
     valor=list(dic.values())
-    n=str(input("animal a traducir: "))
-    if n in valor:
+    nom=str(input("animal a traducir: "))
+    if nom in valor:
         for i in range (len(valor)):
-            if n == valor[i]:
-                y=i
-                return n, "es", clave[y]
+            if nom == valor[i]:
+                y=clave[i]
+                return nom, "es", y
     else:
         return "El animal no esta en el diccionario"
                   
@@ -82,3 +85,4 @@ def traducir ():
                     print("Esta opcion no existe")
         except:
             print("Ingreso un valor no soportado por el sistema")
+#print(traducir())

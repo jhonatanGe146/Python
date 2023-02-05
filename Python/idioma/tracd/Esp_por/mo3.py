@@ -26,23 +26,26 @@ dic_port={
 "falcao":"halcon"
 }
 def port_esp(_dr):
-    a=str(input("Ingrese un animal para mostrar traducción de portugues a español:"))
+    global a,j
+    a=str(input("Ingrese un animal para traducir: "))
     if a in _dr:
         for i in _dr.keys():
             if i == a:
+                j=_dr[i]
                 return (a,"es:",_dr[i])
     else:
         return "El animal NO esta en la lista"
 
 def esp_port(x):
-    palabra=(input("Ingrese animal para saber su traduccion de español a portugues:"))
+    global palabra, ind
+    palabra=(input("Ingrese animal para traducir: "))
     claves=list(x.keys())
     valores=list(x.values())
     if palabra in valores:
         for i in range(len(valores)):
             if palabra == valores[i]:
-                indice=i
-                return (palabra,"es:",claves[indice])
+                ind=claves[i]
+                return (palabra,"es:",ind)
     else:
         return "El animal no esta en el diccionario"
             
@@ -69,4 +72,4 @@ def traducir ():
         except:
             print("Ingreso un valor no soportado por el sistema")
             
-print(traducir())
+#print(traducir())

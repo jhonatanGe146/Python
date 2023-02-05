@@ -27,12 +27,12 @@ __dic= {
 "oyster":"ostra",
 "almeja":"clam",
 "seal":"foca",
-"squid ":"calamar",
+"squid":"calamar",
 "hake":"merluza",
 "sardine":"sardina",
 "tunafish":"atún",
 "cod":"bacalao",
-"bass ":"lubina",
+"bass":"lubina",
 "trout":"trucha",
 "salmon":"salmón",
 "boar":"jabalí",
@@ -52,7 +52,7 @@ __dic= {
 "stork":"cigüeña",
 "swan":"cisne",
 "duck":"pato",
-"pigeon":"paloma ",
+"pigeon":"paloma",
 "monkey":"mono",
 "cobra":"cobra",
 "gorilla":"gorila",
@@ -67,22 +67,25 @@ __dic= {
 }
 
 def ing_esp (dic):
+    global n,x
     n=str(input("Animal a traducir: "))
     if  n in dic:
         for i in dic.keys():
             if n == i:
-                return n, "es", dic[i]
+                x=dic[i]
+                return n, "es", x
     else:
         return "El animal No esta en la diccionario "
 def esp_ing (dic):
+    global nom, y
     clave=list(dic.keys())
     valor=list(dic.values())
-    n=str(input("animal a traducir: "))
-    if n in valor:
+    nom=str(input("animal a traducir: "))
+    if nom in valor:
         for i in range (len(valor)):
-            if n == valor[i]:
-                y=i
-                return n, "es", clave[y]
+            if nom == valor[i]:
+                y=clave[i]
+                return nom, "es", y
     else:
         return "El animal no esta en el diccionario"
             
@@ -101,7 +104,7 @@ def traducir ():
                 case 2:
                     print(esp_ing(__dic))
                 case 3:
-                    print("Saliste")
+                    return("Saliste")
                     break
                 case _:
                     print("Esta opcion no existe")
@@ -110,4 +113,4 @@ def traducir ():
 
 #print (ing_esp(__dic))
 #print(esp_ing(__dic))
-traducir()
+#traducir()
