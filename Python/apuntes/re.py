@@ -1,5 +1,5 @@
 
-#Comparar lista
+""""#Comparar lista
 def lista_igual(lista1,lista2):  
     if lista1 == lista2:
         return("Son iguales")
@@ -44,3 +44,4 @@ while True:
             break
         case _:
             print("NO HAY ESTA OPCION ")
+"""
