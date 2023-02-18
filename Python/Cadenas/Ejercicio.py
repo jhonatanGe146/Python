@@ -50,42 +50,28 @@ def cadena_forma(cadena):
 
 
 #!5- Detetrminar que tipo de palabra es: aguda, grave, esdrujula sobre esdrujula
-def tipo_palabra(cadena):
-    silaba=[]
-    index=[]
-    lon=len(cadena)
-    v=0
-    i=2
-    vocal_tilde='lálélílólúfáféfífófúzázézízózúárérírórúránénínónúnrárérírórúdádédídódú'
-    while v < lon:
-        silaba.append(cadena[v:i])
-        v+=2
-        i+=2
+def tipo_palabra():
+    palabra=[]
+    silaba="1"
+    tilde="""bábébíbóbúcácécícócúdádédídódúfáféfífófúgágégígógúháhéhíhóhújájéjíjójúkákékíkókúlálélílólúmámémímómúnánénínónúñáñéñíñóñúpápépípópúqáqéqí
+    qóqúrárérírórúsásésísósútátétítótúvávévívóvúwáwéwíwówúxáxéxíxóxúyáyéyíyóyúzázézízózúbrábrébríbróbrúcrácrécrícrócrúdrádrédrídródrúfráfréfrífrófrúgrá
+    grégrígrógrúkrákrékríkrókrúlrálrélrílrólrúprápréprípróprúrrárrérrírrórrútrátrétrítrótrúnéczón"""
+    while silaba != "0":
+        silaba=str (input("Ingrese las silabas de la palabra: "))
+        palabra.append(silaba)
+    del palabra[-1]
+    print("".join(palabra), "es una")
+    if palabra[-1] in tilde:
+        print("Palabra Aguda")
+    elif palabra[-2] in tilde:
+        print("Palabra Grave")
+    elif palabra[-3] in tilde:
+        print("Palabra Esdrújula")
+    elif palabra[-4] in tilde:
+        print("Palabra Sobreesdrújula")
+            
+#tipo_palabra()
     
-    if len (silaba) == 6 and silaba[2] in vocal_tilde:
-        print('Palabra sobreesdrújula')
-    elif len (silaba) ==4 and silaba[0] in vocal_tilde:
-        print('Palabra esdrújula')
-    elif len(silaba) == 3 and silaba[0] in vocal_tilde:
-        print('Palabra grave')
-    elif len(silaba)== 2 and silaba[1] in vocal_tilde:
-        print('Palabra aguda')
-    elif len (silaba) ==4 and silaba[2] in vocal_tilde:
-        print('Palabra aguda')
-    
-    print(silaba)
-
-        
-   
-    
-    
-
-tipo_palabra(cadena)
-
-
-
-
-
 
 #!6- Determinar en que tiempo esta conjugado un verbo.
 def verb_tiempo(verbo):
@@ -162,16 +148,4 @@ def sub_cadena (cadena):
         print(cadena[0:i+1])
 
 #sub_cadena(cadena)
-        
-        
-
-
-
-
-
-
-
-
-
-
 
