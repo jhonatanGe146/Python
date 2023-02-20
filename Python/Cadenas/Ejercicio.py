@@ -24,7 +24,7 @@ def cont_cod (cadena):
         cont+=codigo
     return cont
     
-#print(cont_cod(cadena))
+# print(cont_cod(cadena))
 
 
 #!3- Cuantas veces se repite un caracter dado.
@@ -126,7 +126,7 @@ def cifrado (cadena):
         elif ord(i) >= 94  and ord (i) <= 126:
             print ((chr(ord(i)+4)), end="")
             
-#(cifrado(cadena))  
+#(cifrado(cadena))    
 
       
 def descifrado(cadena):
