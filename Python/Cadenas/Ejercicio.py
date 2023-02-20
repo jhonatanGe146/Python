@@ -84,7 +84,7 @@ def verb_tiempo(verbo):
     elif seg_verb == chr(97) or seg_verb == chr(65) or seg_verb == chr(101) or seg_verb == chr(69) or seg_verb == chr(105) or seg_verb == chr(73) or seg_verb == chr(111) or seg_verb == chr(79) or seg_verb == chr (117) or seg_verb == chr (85):
         return ("Verbo en presente")
 
-#print (verb_tiempo(cadena))
+print (verb_tiempo(cadena))
 
 
 #!7- De una cadena diga cuantas vocales tiene, cuantas consonantes, cuantas vocales con tilde y cuantos caracteres especiales.
