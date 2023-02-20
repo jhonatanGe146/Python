@@ -59,3 +59,35 @@ def par (lista,a,c):
         return(lista)
     except AttributeError:
         return ("Debes dar como argumento una lista")
+
+
+try:
+      
+      c=1+1
+      
+except AssertionError:
+    print('AssertionError: No se cumplio la condición')
+except TypeError:
+    print('TypeError:Representa un error cuando una operación no puede ser completada, cuando un valor no es del tipo esperado.')
+except AttributeError:
+    print('AtributeError:Se genera cuando falla una asignación o una referencia de atributo.')
+except SyntaxError:
+    print('SyntaxError:Represta un error cuando se trata de interpretar código que resulta ser inválido sintácticamente.')
+except IndexError:
+    print('Índice de lista fuera de rango.')
+except NameError:
+    print("NameError: Llamar a algo no definido")
+except KeyError:
+    print("KeyError: Llave no encontrada ")       
+except ModuleNotFoundError:
+    print("ModuleNotFoundError: Módulo no encontrado")
+except ValueError:
+        print('Se levanta cuando a una función se le ingresa un argumento que tiene el tipo que se solicita, pero tiene un valor inapropiado.')
+except MemoryError:
+        print("MemoryError:Se produce cuando el sistema no tiene suficiente memoria para en este caso crear la lista.")
+except OverflowError:
+        print('OverflowError:Se produce cuando un cálculo númerico produce un resultado que es demsiado grande para ser representado.')
+except KeyboardInterrupt:
+        print('KeyboardInterrupt: Se ha detenido la ejecución del programa con el comando CTRL+C')
+except ZeroDivisionError:
+    print('ZeroDivisionError: se produce cuando se intenta dividir un número por cero.')
