@@ -6,6 +6,6 @@ def edad():#Define uan función llamada edad que no tiene ningún parametro.
     except ValueError as e:#Define el bloque de codigo en que se se trataran los errores (except),hace uso de la excepción (ValueError) que es renombrada a 'e'
         print(e)#Imprime la excepción ValueError
         print("La edad debe ser un valor numerico...")# Imprime un mensaje personalizado que se mostrara si se ejecuta la excepción (ValueError).
-        edad()#Se llama a la función edad() que no toma como argumentos ningun valor,se ejecutara siempre y cuando se ejecute la excepción ValueError.
+        edad()#Se llama a la función edad() que no toma como argumentos ningun valor,se ejecutara siempre y cuando se ejecute la excepción ValueError, es una función recursiva.
     
 edad()#Se llama a la función edad() que no toma como argumentos ningun valor.
