@@ -23,7 +23,7 @@ class Aprendiz(Persona):
     def todo (self):
         print(self.getNombre())
         print(self.getDocumento())
-        print(self.__ficha)
+        print(self.get_ficha())
         return " "
     
 pers=Persona('Andres',1100502146)
