@@ -143,4 +143,4 @@ print(obj.var, obj.var_left, obj.var_right, obj.fun())
 #cuando un metodo de una supler clase esta vacio,
 # vamos a poner todos los detalles en la subclase (dicho método a menudo se denomina método abstracto, ya que solo demuestra alguna posibilidad que será instanciada más tarde).
 
-#la situación en la cual la subclase puede modificar el comportamiento de su superclase (como en el ejemplo) se llama poliformismo.
+#la situación en la cual la subclase puede modificar el comportamiento de su superclase (como en el ejemplo) se llama polimorfismo.
