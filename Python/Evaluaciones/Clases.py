@@ -57,6 +57,7 @@ class Lector:
         self.__Direccion = Dir
         self.__Telefono = Te
         self.__reservado={}
+        self.__usuario = [self.Nombre,self.__Direccion,self.__Telefono]
         
     #setter/getter Nombre
     def getNombre(self):
@@ -86,6 +87,8 @@ class Lector:
             del self.__reservado[titulo]
         else:
             print('No ha reservado este libro')
+    def datos_usuario (self):
+        return self.__usuario
    
         
     
@@ -111,7 +114,7 @@ class Docente(Lector):
         return Docente.__codigo
 
 
-"""class Bibliotecario():  
+class Bibliotecario():
     __ID=200
     def __init__(self,nom):
         Bibliotecario.__ID+=1
@@ -119,40 +122,189 @@ class Docente(Lector):
     
     #setter/getter
     def getNombreBibliotecario(self):
-        return self.nombreBibliotecario
+        return f'bibliotecario: {self.nombreBibliotecario}'
     def setNombreBibliotecario(self,no):
         self.nombreBibliotecario=no    
-    
-    
+        
     def getCodigoBibliotecario(self):
         return Bibliotecario.__ID
 
 class Pedido():
-    def __init__(self, usu, ma, bi=0):
+    def __init__(self, usu, ma, bi):
         self.usu = usu
         self.ma = ma
         self.bi = bi
+        self.pedido=[self.usu, self.ma, self.bi]
         
-    def getNombre(self):
-        print(self.usu)
-        print(self.ma)
-        #print(self.bi)
+    def getUsu(self):
+        return self.usu
+    def getma(self):
+        return self.ma
+    def getbi (self):
+        return self.bi
         
-    def Realizarpedido(self):
-        pass
-        """
+    def getresivo (self):
+        return self.pedido
         
 
 y=libro('Cien Años de Soledad','Drama','Gabriel','NN')
 #print (y.Cont_Libro())
-
 x=Revista('chistes de la semana','comedia','perez','la risa')
 #print(x.Cont_Revis())
-
+b=Bibliotecario('stiven')
 m=Estudiante('Andres','cra 12', 321155164464)
+dt=(m.datos_usuario())
+db=(b.getNombreBibliotecario())
+#print(m.getCodigoEstudiante())
+
 m.reserva(x.getTitulo(), x.Cont_Revis())
 m.reserva(y.getTitulo(),y.Cont_Libro())
-print(m.getReserva())
+re=(m.getReserva())
 m.Entregar('Cien Años de Soledad')
 print(m.getReserva())
-#print(m.todo())
+pe=Pedido(dt,re,db)
+print(pe.getresivo())
+
+
+def Biblioteca (var):    
+    while True:
+        print('1- Crear')
+        print('2- consultas')
+    
+        ctrl=str (input("Seleciona una opcion: "))
+        match ctrl:
+            case '1':
+                print()
+                print('1- Crear estudiante')
+                print('2- Crear Docente')
+                print('3- Crear libro')
+                print('4- Crear revista')
+                print('5- Crear bibliotecario')
+                ctrl2=str (input("Seleciona una opcion: "))
+                match ctrl2:
+                    case '1':
+                        c1=str(input('Nombre del estudiante: '))
+                        c2=str(input('Dirección del estudiante: '))
+                        c3=str(input('Telefono del estudiante: '))
+                        var=Estudiante(c1,c2,c3)
+                    case '2':
+                        c1=str(input('Nombre del Docente: '))
+                        c2=str(input('Dirección del Docente: '))
+                        c3=str(input('Telefono del Docente: '))
+                        var=Docente(c1,c2,c3)
+                    case '3':
+                        c1=str(input('Titulo del libro: '))
+                        c2=str(input('Genero del libro: '))
+                        c3=str(input('Autor del libro: '))
+                        c4=str(input('Editorial del libro: '))
+                        var=libro(c1,c2,c3,c4)
+                    case '4':
+                        c1=str(input('Titulo de la revista: '))
+                        c2=str(input('Genero de la revista: '))
+                        c3=str(input('Autor de la revista: '))
+                        c4=str(input('Edicion de la revista: '))
+                        var=Revista(c1,c2,c3,c4)
+                    case '5':
+                        c1=str(input('Nombre del bibliotecario: '))
+                        var=Bibliotecario(c1)
+                        
+                        
+                
+            case '2':
+                print()
+                print('1- Consultar estudiante')
+                print('2- Consultar Docente')
+                print('3- Consultar libro')
+                print('4- Consultar revista')
+                print('5- Consultar bibliotecario')
+                ctrl3=str (input("Seleciona una opcion: "))
+                match ctrl3:
+                    case '1':
+                        while True:
+                            print()
+                            print('1- Consultar Nombre estudiante')
+                            print('2- Consultar Dirección estudiante')
+                            print('3- Consultar Telefono estudiante')
+                            print('4- Salir')
+                            ctrl4=str (input("Seleciona una opcion: "))
+                            match ctrl4:
+                                case '1':
+                                    print('Nombre del estudiante:',var.getNombre())
+                                case '2':
+                                    print('Dirección del estudiante:',var.getDireccion())
+                                case '3':
+                                    print('Telefono del estudiante:',var.getTelefono())
+                                case '4':
+                                    break
+                    case '2':
+                        while True:
+                            print()
+                            print('1- Consultar Nombre Docente')
+                            print('2- Consultar Dirección Docente')
+                            print('3- Consultar Telefono Docente')
+                            print('4- Salir')
+                            ctrl4=str (input("Seleciona una opcion: "))
+                            match ctrl4:
+                                case '1':
+                                    print('Nombre del Docente:',var.getNombre())
+                                case '2':
+                                    print('Dirección del Docente:',var.getDireccion())
+                                case '3':
+                                    print('Telefono del DOCENTE:',var.getTelefono())
+                                case '4':
+                                    break
+                    case '3':
+                        while True:
+                            print()
+                            print('1- Consultar Titulo del libro')
+                            print('2- Consultar Genero del libro')
+                            print('3- Consultar Autor del libro')
+                            print('4- Consultar Editorial del libro')
+                            print('5- Salir')
+                            ctrl4=str (input("Seleciona una opcion: "))
+                            match ctrl4:
+                                case '1':
+                                    print('Nombre del Docente:',var.getTitulo())
+                                case '2':
+                                    print('Dirección del Docente:',var.getTipo())
+                                case '3':
+                                    print('Telefono del DOCENTE:',var.getAutor())
+                                case '4':
+                                    print('Editorial del libro', var.getEditorial())
+                                case '5':
+                                 
+                                    break
+                    case '4':
+                        while True:
+                            print()
+                            print('1- Consultar Titulo de la revista')
+                            print('2- Consultar Genero de la revista')
+                            print('3- Consultar Autor de la revista')
+                            print('4- Consultar Editocion de la revista')
+                            print('5- Salir')
+                            ctrl5=str (input("Seleciona una opcion: "))
+                            match ctrl5:
+                                case '1':
+                                    print('Nombre del Docente:',var.getTitulo())
+                                case '2':
+                                    print('Dirección del Docente:',var.getTipo())
+                                case '3':
+                                    print('Telefono del DOCENTE:',var.getAutor())
+                                case '4':
+                                    print('Editorial del libro', var.getEdicion())
+                                case '5':
+                                 
+                                    break
+                        
+                        
+                        
+                        
+            case '3':
+                break
+            
+        
+    
+c=""
+
+Biblioteca(c)
+    
