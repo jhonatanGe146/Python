@@ -147,29 +147,32 @@ class Pedido():
         return self.pedido
         
 
-y=libro('Cien Años de Soledad','Drama','Gabriel','NN')
-#print (y.Cont_Libro())
-x=Revista('chistes de la semana','comedia','perez','la risa')
-#print(x.Cont_Revis())
-b=Bibliotecario('stiven')
-m=Estudiante('Andres','cra 12', 321155164464)
-dt=(m.datos_usuario())
-db=(b.getNombreBibliotecario())
-#print(m.getCodigoEstudiante())
+# y=libro('Cien Años de Soledad','Drama','Gabriel','NN')
+# #print (y.Cont_Libro())
+# x=Revista('chistes de la semana','comedia','perez','la risa')
+# #print(x.Cont_Revis())
+# b=Bibliotecario('stiven')
+# m=Estudiante('Andres','cra 12', 321155164464)
+# dt=(m.datos_usuario())
+# db=(b.getNombreBibliotecario())
+# #print(m.getCodigoEstudiante())
 
-m.reserva(x.getTitulo(), x.Cont_Revis())
-m.reserva(y.getTitulo(),y.Cont_Libro())
-re=(m.getReserva())
-m.Entregar('Cien Años de Soledad')
-print(m.getReserva())
-pe=Pedido(dt,re,db)
-print(pe.getresivo())
+# m.reserva(x.getTitulo(), x.Cont_Revis())
+# m.reserva(y.getTitulo(),y.Cont_Libro())
+# re=(m.getReserva())
+# m.Entregar('Cien Años de Soledad')
+# print(m.getReserva())
+# pe=Pedido(dt,re,db)
+# print(pe.getresivo())
 
 
 def Biblioteca (var):    
     while True:
         print('1- Crear')
-        print('2- consultas')
+        print('2- Consultas')
+        print('3- Actualizar')
+        print('4- Salir')
+        print()
     
         ctrl=str (input("Seleciona una opcion: "))
         match ctrl:
@@ -180,8 +183,8 @@ def Biblioteca (var):
                 print('3- Crear libro')
                 print('4- Crear revista')
                 print('5- Crear bibliotecario')
-                ctrl2=str (input("Seleciona una opcion: "))
-                match ctrl2:
+                ctrl=str (input("Seleciona una opcion: "))
+                match ctrl:
                     case '1':
                         c1=str(input('Nombre del estudiante: '))
                         c2=str(input('Dirección del estudiante: '))
@@ -207,9 +210,7 @@ def Biblioteca (var):
                     case '5':
                         c1=str(input('Nombre del bibliotecario: '))
                         var=Bibliotecario(c1)
-                        
-                        
-                
+    
             case '2':
                 print()
                 print('1- Consultar estudiante')
@@ -217,8 +218,9 @@ def Biblioteca (var):
                 print('3- Consultar libro')
                 print('4- Consultar revista')
                 print('5- Consultar bibliotecario')
-                ctrl3=str (input("Seleciona una opcion: "))
-                match ctrl3:
+                print()
+                ctrl=str (input("Seleciona una opcion: "))
+                match ctrl:
                     case '1':
                         while True:
                             print()
@@ -226,8 +228,8 @@ def Biblioteca (var):
                             print('2- Consultar Dirección estudiante')
                             print('3- Consultar Telefono estudiante')
                             print('4- Salir')
-                            ctrl4=str (input("Seleciona una opcion: "))
-                            match ctrl4:
+                            ctrl=str (input("Seleciona una opcion: "))
+                            match ctrl:
                                 case '1':
                                     print('Nombre del estudiante:',var.getNombre())
                                 case '2':
@@ -243,8 +245,8 @@ def Biblioteca (var):
                             print('2- Consultar Dirección Docente')
                             print('3- Consultar Telefono Docente')
                             print('4- Salir')
-                            ctrl4=str (input("Seleciona una opcion: "))
-                            match ctrl4:
+                            ctrl=str (input("Seleciona una opcion: "))
+                            match ctrl:
                                 case '1':
                                     print('Nombre del Docente:',var.getNombre())
                                 case '2':
@@ -261,8 +263,8 @@ def Biblioteca (var):
                             print('3- Consultar Autor del libro')
                             print('4- Consultar Editorial del libro')
                             print('5- Salir')
-                            ctrl4=str (input("Seleciona una opcion: "))
-                            match ctrl4:
+                            ctrl=str (input("Seleciona una opcion: "))
+                            match ctrl:
                                 case '1':
                                     print('Nombre del Docente:',var.getTitulo())
                                 case '2':
@@ -282,8 +284,8 @@ def Biblioteca (var):
                             print('3- Consultar Autor de la revista')
                             print('4- Consultar Editocion de la revista')
                             print('5- Salir')
-                            ctrl5=str (input("Seleciona una opcion: "))
-                            match ctrl5:
+                            ctrl=str (input("Seleciona una opcion: "))
+                            match ctrl:
                                 case '1':
                                     print('Nombre del Docente:',var.getTitulo())
                                 case '2':
@@ -295,14 +297,140 @@ def Biblioteca (var):
                                 case '5':
                                  
                                     break
-                        
-                        
-                        
+                    case '5':
+                        while True:
+                            print()
+                            print('1- Consultar Nombre Bibliotecario')
+                            print('2- Salir')
+                            ctrl=str (input("Seleciona una opcion: "))
+                            match ctrl:
+                                case '1':
+                                    print('Nombre del Bibliotecario:',var.getNombreBibliotecario())
+                                case '2':
+                                    break   
                         
             case '3':
+                print()
+                print('1- Actualizar Estudiante')
+                print('2- Actualizar Docente')
+                print('3- Actualizar libro')
+                print('4- Actualizar revista')
+                print('5- Actualizar bibliotecario')
+                print()
+                ctrl=str (input("Seleciona una opcion: "))
+                match ctrl:
+                    case '1':
+                        
+                        while True:
+                            print()
+                            print('1- Actualizar Nombre estudiante')
+                            print('2- Actualizar Dirección estudiante')
+                            print('3- Actualizar Telefono estudiante')
+                            print('4- Salir')
+                            ctrl=str (input("Seleciona una opcion: "))
+                            print()
+                            match ctrl:
+                                case '1':
+                                    nom=str(input('Ingrese nombre para actualizar; '))
+                                    var.setNombre(nom)
+                                case '2':
+                                    dir=str(input('Ingrese dirrección para actualizar: '))
+                                    var.setDireccion(dir)
+                                case '3':
+                                    tel=str(input('Ingrese Teléfono para actualizar: '))
+                                    var.setTelefono(tel)
+                                case '4':
+                                    break
+                    case '2':
+                        while True:
+                                print()
+                                print('1- Actualizar Nombre Docente')
+                                print('2- Actualizar Dirección  Docente')
+                                print('3- Actualizar Telefono  Docente')
+                                print('4- Salir')
+                                ctrl=str (input("Seleciona una opcion: "))
+                                print()
+                                match ctrl:
+                                    case '1':
+                                        nom=str(input('Ingrese nombre para actualizar; '))
+                                        var.setNombre(nom)
+                                    case '2':
+                                        dir=str(input('Ingrese dirrección para actualizar: '))
+                                        var.setDireccion(dir)
+                                    case '3':
+                                        tel=str(input('Ingrese Teléfono para actualizar: '))
+                                        var.setTelefono(tel)
+                                    case '4':
+                                        break
+                    case '3':
+                        while True:
+                                print()
+                                print('1- Actualizar Titulo del libro')
+                                print('2- Actualizar Genero del libro')
+                                print('3- Actualizar Autor del libro')
+                                print('4- Actualizar la editorial del libro')
+                                print('5- Salir')
+                                ctrl=str (input("Seleciona una opcion: "))
+                                print()
+                                match ctrl:
+                                    case '1':
+                                        nom=str(input('Ingrese titulo para actualizar: '))
+                                        var.setTitulo(nom)
+                                    case '2':
+                                        dir=str(input('Ingrese Genero para actualizar: '))
+                                        var.setTipo(dir)
+                                    case '3':
+                                        tel=str(input('Ingrese autor para actualizar: '))
+                                        var.setAutor(tel)
+                                    case '4':
+                                        edi=str(input('Ingrese editotial para actualizar: '))
+                                        var.setEditorial(edi)
+                                    case '5':
+                                        break
+                    case '4':
+                        while True:
+                                print()
+                                print('1- Actualizar Titulo de la revista')
+                                print('2- Actualizar Genero de la revista')
+                                print('3- Actualizar Autor de la revista')
+                                print('4- Actualizar la edición de la revista')
+                                print('5- Salir')
+                                ctrl=str (input("Seleciona una opcion: "))
+                                print()
+                                match ctrl:
+                                    case '1':
+                                        nom=str(input('Ingrese titulo para actualizar: '))
+                                        var.setTitulo(nom)
+                                    case '2':
+                                        dir=str(input('Ingrese genero para actualizar: '))
+                                        var.setTipo(dir)
+                                    case '3':
+                                        tel=str(input('Ingrese autor para actualizar: '))
+                                        var.setAutor(tel)
+                                    case '4':
+                                        edi=str(input('Ingrese edicion para actualizar: '))
+                                        var.setEditorial(edi)
+                                    case '5':
+                                        break
+                    case '5':
+                        while True:
+                            print()
+                            print('1- Actualizar Nombre del bibliotecario')
+                            print('2- Salir')
+                            ctrl=str (input("Seleciona una opcion: "))
+                            print()
+                            match ctrl:
+                                case '1':
+                                    nom=str(input('Ingrese nombre para actualizar: '))
+                                    var.setNombreBibliotecario(nom)
+                                case '2':
+                                    break
+                                    
+            case '4':
+                print('Saliste de programa')
                 break
-            
-        
+               
+     
     
 c=""
 
