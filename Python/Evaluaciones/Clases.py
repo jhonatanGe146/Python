@@ -430,9 +430,16 @@ def Biblioteca (var):
                 print('Saliste de programa')
                 break
                
-     
+               
     
-c=""
 
-Biblioteca(c)
+with open ('Python/Evaluaciones/Aprendicez.txt','r') as flujo:
+    ap=flujo.readlines()
+    x=ap.remove('\n')
+    #ap2=ap.split(',')
+    for i in ap:
+        x=(i.split(','))  
+        print(x)
+lista=[]
     
+        
