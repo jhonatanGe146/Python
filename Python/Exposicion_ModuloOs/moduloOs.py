@@ -26,7 +26,7 @@ import os
 # nt: obtendrás este nombre si usas Windows.
 # java: obtendrás este nombre si tu código está escrito en Jython.
 
-# print(os.name())
+#print(os.name)
 
 import platform
 #print(platform.uname())
@@ -59,7 +59,7 @@ import platform
 
 
 #?Función getcwd() devuelve la información solo el directorio de trabajo actual
-print(os.getcwd())
+#print(os.getcwd())
 
 
 #?Función rmdir() Eliminar directorios vacios.
@@ -70,5 +70,5 @@ print(os.getcwd())
 
 #?Función system()  ejecuta un comando que se le pasa como cadena.
 
-value = os.system("mkdir directorio_con_system")
-print(value)
+# value = os.system("mkdir directorio_con_system")
+# print(value)
