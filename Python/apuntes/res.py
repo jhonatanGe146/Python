@@ -45,3 +45,14 @@ while True:
         case _:
             print("NO HAY ESTA OPCION ")
 """
+class hola:
+    def __init__(self,val=0):
+        pass
+
+
+
+ob1=hola(None)
+print(ob1)
+print()
+print()
+print()
