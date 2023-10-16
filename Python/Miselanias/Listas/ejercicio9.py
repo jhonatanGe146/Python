@@ -4,6 +4,7 @@ Encuentre la mediana de los números de la lista."""
 import random
 rango=random.randint(10,25)
 lista=[]
+
 media=[]
 for i in range (rango):
     lista.append(round(random.random()*100))

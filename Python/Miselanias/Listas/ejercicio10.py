@@ -17,3 +17,5 @@ for l in range (len(lista)):
 divi=sumat/(len(lista)-1)
 raiz=divi**0.5
 print("La desviación estandar es: ",raiz)
+
+
