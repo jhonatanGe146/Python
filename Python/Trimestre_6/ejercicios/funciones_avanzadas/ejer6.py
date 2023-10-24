@@ -142,5 +142,4 @@ def calcular_varianza(*args, **kwargs):
         except ZeroDivisionError:
             print(f"Error: no se puede calcular la varianza.")
 
-
 calcular_varianza(lista1,lista2,lista3)
