@@ -8,6 +8,12 @@ def EscribirCentrado(texto):
     espacios = 40 - long_tex // 2
     print(" "*espacios+texto)
     print("=" * 80)
+    
+def EscribirCentradoS(texto):
+    long_tex = len(texto)
+    espacios = 40 - long_tex // 2
+    print(" "*espacios+texto)
+    print("" * 80)
 
 # texto = str(input("Digite el texto a centrar: "))
 # EscribirCentrado(texto)
